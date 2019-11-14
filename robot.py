@@ -16,8 +16,24 @@ def main():
     # print(steps)
     # print(robot_forward())
 
-    print(ctrl.robot_forward(3))
-    # d_all = ['E', 'S', 'W', 'N']
+    print(ctrl.robot_where())
+    print(ctrl.robot_face_to())
+
+    ctrl.robot_forward(3)
+    ctrl.robot_turn_right()
+    ctrl.robot_backward(5)
+
+    print(ctrl.robot_where())
+    print(ctrl.robot_face_to())
+
+
+    ctrl.robot_turn_left()
+    ctrl.robot_backward(5)
+    ctrl.robot_forward(3)
+
+    print(ctrl.robot_where())
+    print(ctrl.robot_face_to())
+
 
 
     #
