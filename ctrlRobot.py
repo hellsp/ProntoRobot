@@ -5,7 +5,7 @@
 # @Project: ProntoRobot
 
 import classRobot
-R = classRobot.Robot()
+R = classRobot.Robot()  # can specify Robot's initialization
 
 
 def robot_where():
