@@ -29,6 +29,5 @@ def main():
     print("\n== Result ==\n", C.robot_where(), C.robot_face_to())
 
 
-
 main()
 
