@@ -13,7 +13,6 @@ def main():
     for s in inputs.strip().split(','):
         robotAction = s[:1]
         actionUnits = int(s[1:])
-        #print(robotAction, actionUnits)
         if robotAction == 'F':
             C.robot_forward(actionUnits)
         elif robotAction == 'B':
