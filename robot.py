@@ -27,7 +27,6 @@ def main():
                 C.robot_turn_left()
                 actionUnits -= 1
 
-
     print("\n== Result ==\n", C.robot_where(), C.robot_face_to())
 
 
