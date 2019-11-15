@@ -5,20 +5,20 @@
 # @Project: ProntoRobot
 
 import classRobot
-robot = classRobot.Robot()
+R = classRobot.Robot()
 
 
 def robot_where():
-    return robot.get_position()
+    return R.get_position()
 
 
 def robot_face_to():
-    return robot.get_direction()
+    return R.get_direction()
 
 
 def robot_forward(units):
-    x, y = robot.get_position()
-    d = robot.get_direction()
+    x, y = R.get_position()
+    d = R.get_direction()
     if d == 'E':
         x += units
     elif d == 'N':
@@ -27,13 +27,13 @@ def robot_forward(units):
         x -= units
     elif d == 'S':
         y -= units
-    robot.set_position(x, y)
-    return robot.get_position()
+    R.set_position(x, y)
+    return R.get_position()
 
 
 def robot_backward(units):
-    x, y = robot.get_position()
-    d = robot.get_direction()
+    x, y = R.get_position()
+    d = R.get_direction()
     if d == 'E':
         x -= units
     elif d == 'N':
@@ -42,12 +42,12 @@ def robot_backward(units):
         x += units
     elif d == 'S':
         y += units
-    robot.set_position(x, y)
-    return robot.get_position()
+    R.set_position(x, y)
+    return R.get_position()
 
 
 def robot_turn_left():
-    d = robot.get_direction()
+    d = R.get_direction()
     if d == 'E':
         d = 'N'
     elif d == 'N':
@@ -56,12 +56,12 @@ def robot_turn_left():
         d = 'S'
     elif d == 'S':
         d = 'E'
-    robot.set_direction(d)
-    return robot.get_direction()
+    R.set_direction(d)
+    return R.get_direction()
 
 
 def robot_turn_right():
-    d = robot.get_direction()
+    d = R.get_direction()
     if d == 'E':
         d = 'S'
     elif d == 'S':
@@ -70,5 +70,5 @@ def robot_turn_right():
         d = 'N'
     elif d == 'N':
         d = 'E'
-    robot.set_direction(d)
-    return robot.get_direction()
+    R.set_direction(d)
+    return R.get_direction()

@@ -6,9 +6,11 @@
 
 
 class Robot:
-    def __init__(self, position=[0, 0], direction='N'):
-        self.__position = position
-        self.__direction = direction  # 'N'orth, 'S'outh, 'E'ast, 'W'est
+    # A new Robot initialization
+    # if not specified, initial Position is (0,0), initial Direct is North
+    def __init__(self, p=[0, 0], d='N'):
+        self.__position = p
+        self.__direction = d  # 'N'orth, 'S'outh, 'E'ast, 'W'est
 
     def get_position(self):
         return self.__position
@@ -16,11 +18,11 @@ class Robot:
     def get_direction(self):
         return self.__direction
 
-    def set_position(self, X=0, Y=0):
-        self.__position = [X, Y]
+    def set_position(self, x=0, y=0):
+        self.__position = [x, y]
 
-    def set_direction(self,D):
-        self.__direction = D
+    def set_direction(self, d):
+        self.__direction = d
 
     def __str__(self):
         return "Robot's position is " + str(self.__position) \
