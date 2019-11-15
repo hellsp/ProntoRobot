@@ -5,7 +5,7 @@
 # @Project: ProntoRobot
 
 import classRobot
-R = classRobot.Robot()
+R = classRobot.Robot()  # can specify Robot's initialization
 
 
 def robot_where():
@@ -72,3 +72,6 @@ def robot_turn_right():
         d = 'E'
     R.set_direction(d)
     return R.get_direction()
+
+# def get_distance():
+    # TODO
