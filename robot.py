@@ -26,8 +26,14 @@ def main():
             while actionUnits:
                 C.robot_turn_left()
                 actionUnits -= 1
-    print("\n== Result ==\n", C.robot_where(), C.robot_face_to())
 
+    print("\n== Robot's position and direction ==\n",
+          C.robot_where(), C.robot_face_to())
+
+    stopPos = C.robot_where()
+    # calculate distance
+    d = C.get_distance(startPos, stopPos)
+    print(d)
 
 
 main()
