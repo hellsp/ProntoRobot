@@ -14,6 +14,8 @@ def main():
     # for test, input "F1,R1,B2,L1,B3"
     inputs = input("Please input commands to move the Robot: ")
     startPos = C.robot_where()
+
+    # process input commands to move the Robot
     for s in inputs.upper().strip().replace(' ', '').split(','):
         robotAction = s[:1]
         actionUnits = int(s[1:])
@@ -24,6 +26,7 @@ def main():
             print("Please restart this application to re-input correct commands!")
             return
 
+        # move the Robot based on the commands
         if robotAction == 'F':
             C.robot_forward(actionUnits)
         elif robotAction == 'B':
@@ -37,10 +40,12 @@ def main():
                 C.robot_turn_left()
                 actionUnits -= 1
 
-    print("\n== Robot's position and direction ==",
+    # output the last point of the Robot
+    print("\n== Robot's last position and direction ==",
           "\nPosition: ", C.robot_where(),
           "\nDirection: ", C.robot_face_to())
 
+    # output the minimum distance to initial
     stopPos = C.robot_where()
     d = C.get_distance(startPos, stopPos)
     print("\nThe minimum distance backs to start point is: ", d)
