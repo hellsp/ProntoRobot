@@ -32,7 +32,6 @@ def main():
           "\nDirection: ", C.robot_face_to())
 
     stopPos = C.robot_where()
-    # calculate distance
     d = C.get_distance(startPos, stopPos)
     print("\nThe minimum distance backs to start point is: ", d)
 
