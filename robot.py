@@ -19,7 +19,7 @@ def main():
         actionUnits = int(s[1:])
 
         if robotAction not in ('F', 'B', 'R', 'L') or type(actionUnits) is not int:
-            print("Invalid input!",robotAction,actionUnits)
+            print("Invalid input!", robotAction," - ", actionUnits)
             return
 
         if robotAction == 'F':
