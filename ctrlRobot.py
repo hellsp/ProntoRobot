@@ -27,8 +27,7 @@ def robot_forward(units):
         x -= units
     elif d == 'S':
         y -= units
-    R.set_position(x, y)
-    return R.get_position()
+    return R.set_position(x, y)
 
 
 def robot_backward(units):
@@ -42,8 +41,7 @@ def robot_backward(units):
         x += units
     elif d == 'S':
         y += units
-    R.set_position(x, y)
-    return R.get_position()
+    return R.set_position(x, y)
 
 
 def robot_turn_left():
@@ -56,8 +54,7 @@ def robot_turn_left():
         d = 'S'
     elif d == 'S':
         d = 'E'
-    R.set_direction(d)
-    return R.get_direction()
+    return R.set_direction(d)
 
 
 def robot_turn_right():
@@ -70,8 +67,9 @@ def robot_turn_right():
         d = 'N'
     elif d == 'N':
         d = 'E'
-    R.set_direction(d)
-    return R.get_direction()
+    return R.set_direction(d)
 
-# def get_distance():
-    # TODO
+
+def get_distance(a, b):
+    distance = abs(b[1] - a[1]) + abs(b[0] - a[0])
+    return distance

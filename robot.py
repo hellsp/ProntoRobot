@@ -9,11 +9,11 @@ C = ctrlRobot
 
 
 def main():
+    startPos = C.robot_where()
     inputs = "F1,R1,B2,L1,B3"
     for s in inputs.strip().split(','):
         robotAction = s[:1]
         actionUnits = int(s[1:])
-        #print(robotAction, actionUnits)
         if robotAction == 'F':
             C.robot_forward(actionUnits)
         elif robotAction == 'B':
