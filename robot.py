@@ -9,7 +9,7 @@ C = ctrlRobot
 
 
 def main():
-    startPos = [0,0]
+    startPos = C.robot_where()
     inputs = "F1,R1,B2,L1,B3"
     for s in inputs.strip().split(','):
         robotAction = s[:1]
