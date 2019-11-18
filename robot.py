@@ -27,13 +27,14 @@ def main():
                 C.robot_turn_left()
                 actionUnits -= 1
 
-    print("\n== Robot's position and direction ==\n",
-          C.robot_where(), C.robot_face_to())
+    print("\n== Robot's position and direction ==",
+          "\nPosition: ", C.robot_where(),
+          "\nDirection: ", C.robot_face_to())
 
     stopPos = C.robot_where()
     # calculate distance
     d = C.get_distance(startPos, stopPos)
-    print(d)
+    print("\nThe minimum distance backs to start point is: ", d)
 
 
 main()
