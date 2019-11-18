@@ -11,34 +11,45 @@ C = ctrlRobot
 def main():
     print("======= Pronto Cloud Robot =======")
 
-    # for test, input "F1,R1,B2,L1,B3"
-    inputs = input("Please input commands to move the Robot: ")
-    startPos = C.robot_where()
+    # for test, please input "F1,R1,B2,L1,B3"
+    robotMove = {}
+    Verified = False
+    while not Verified:
+        inputs = input("Please input commands to move the Robot: ").upper().strip().replace(' ', '').split(',')
+        # remove empty items in the inputs
+        inputs = [x for x in inputs if x]
+
+        # determine commands in inputs
+        for s in inputs:
+            act = s[:1]
+            units = s[1:]
+
+            # determine invalid input commands
+            if act not in ('F', 'B', 'R', 'L') or not units.isdigit():
+                print("Invalid input!", act, " - ", units)
+                Verified = False
+            else:
+                robotMove[act] = int(units)
+                Verified = True
 
     # process input commands to move the Robot
-    for s in inputs.upper().strip().replace(' ', '').split(','):
-        robotAction = s[:1]
-        actionUnits = int(s[1:])
-
-        # verify input commands
-        if robotAction not in ('F', 'B', 'R', 'L') or type(actionUnits) is not int:
-            print("Invalid input!", robotAction, " - ", actionUnits)
-            print("Please restart this application to re-input correct commands!")
-            return
+    startPos = C.robot_where()
+    for a in robotMove:
+        u = robotMove[a]
 
         # move the Robot based on the commands
-        if robotAction == 'F':
-            C.robot_forward(actionUnits)
-        elif robotAction == 'B':
-            C.robot_backward(actionUnits)
-        elif robotAction == 'R':
-            while actionUnits:
+        if a == 'F':
+            C.robot_forward(u)
+        elif a == 'B':
+            C.robot_backward(u)
+        elif a == 'R':
+            while u:
                 C.robot_turn_right()
-                actionUnits -= 1
-        elif robotAction == 'L':
-            while actionUnits:
+                u -= 1
+        elif a == 'L':
+            while u:
                 C.robot_turn_left()
-                actionUnits -= 1
+                u -= 1
 
     # output the last point of the Robot
     print("\n== Robot's last position and direction ==",
