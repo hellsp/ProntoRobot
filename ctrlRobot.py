@@ -69,6 +69,7 @@ def robot_turn_right():
         d = 'E'
     return R.set_direction(d)
 
-# def get_distance():
-    # TODO
-    #
+
+def get_distance(a, b):
+    distance = abs(b[1] - a[1]) + abs(b[0] - a[0])
+    return distance

@@ -9,6 +9,7 @@ C = ctrlRobot
 
 
 def main():
+    startPos = [0,0]
     inputs = "F1,R1,B2,L1,B3"
     for s in inputs.strip().split(','):
         robotAction = s[:1]
@@ -26,6 +27,7 @@ def main():
                 C.robot_turn_left()
                 actionUnits -= 1
     print("\n== Result ==\n", C.robot_where(), C.robot_face_to())
+
 
 
 main()
