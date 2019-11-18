@@ -18,6 +18,7 @@ def main():
         robotAction = s[:1]
         actionUnits = int(s[1:])
 
+        # verify input commands
         if robotAction not in ('F', 'B', 'R', 'L') or type(actionUnits) is not int:
             print("Invalid input!", robotAction, " - ", actionUnits)
             print("Please restart this application to re-input correct commands!")
