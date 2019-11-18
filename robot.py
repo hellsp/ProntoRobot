@@ -9,11 +9,19 @@ C = ctrlRobot
 
 
 def main():
+    print("======= Pronto Cloud Robot =======")
+
+    # for test, input "F1,R1,B2,L1,B3"
+    inputs = input("Please input commands to move the Robot: ")
     startPos = C.robot_where()
-    inputs = "F1,R1,B2,L1,B3"
-    for s in inputs.strip().split(','):
+    for s in inputs.upper().strip().replace(' ', '').split(','):
         robotAction = s[:1]
         actionUnits = int(s[1:])
+
+        if robotAction not in ('F', 'B', 'R', 'L') or type(actionUnits) is not int:
+            print("Invalid input!",robotAction,actionUnits)
+            return
+
         if robotAction == 'F':
             C.robot_forward(actionUnits)
         elif robotAction == 'B':

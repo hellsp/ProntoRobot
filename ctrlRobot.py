@@ -5,7 +5,7 @@
 # @Project: ProntoRobot
 
 import classRobot
-R = classRobot.Robot()  # can specify Robot's initialization
+R = classRobot.Robot()  # can specify Robot's initial point:e.g. (p=[1,1], d='S')
 
 
 def robot_where():
