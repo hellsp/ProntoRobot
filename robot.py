@@ -9,7 +9,7 @@ C = ctrlRobot
 
 
 def main():
-    print("======= Pronto Cloud Robot =======")
+    print("\n======= Pronto Cloud Robot =======\n")
 
     # for test, please input "F1,R1,B2,L1,B3"
     robotMove = {}
@@ -32,7 +32,7 @@ def main():
                 robotMove[act] = int(units)
                 Verified = True
 
-    # process input commands to move the Robot
+    # process inputted commands to move the Robot
     startPos = C.robot_where()
     for a in robotMove:
         u = robotMove[a]
@@ -51,15 +51,12 @@ def main():
                 C.robot_turn_left()
                 u -= 1
 
-    # output the last point of the Robot
-    print("\n== Robot's last position and direction ==",
-          "\nPosition: ", C.robot_where(),
-          "\nDirection: ", C.robot_face_to())
-
     # output the minimum distance to initial
     stopPos = C.robot_where()
     d = C.get_distance(startPos, stopPos)
+    # print(stopPos)
     print("\nThe minimum distance backs to start point is: ", d)
+    print("\n")
 
 
 main()
