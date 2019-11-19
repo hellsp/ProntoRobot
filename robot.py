@@ -16,10 +16,11 @@ def main():
     Verified = False
     while not Verified:
         inputs = input("Please input commands to move the Robot: ").upper().strip().replace(' ', '').split(',')
-        # remove empty items in the inputs
+
+        # remove empty items from the inputs
         inputs = [x for x in inputs if x]
 
-        # determine commands in inputs
+        # determine commands in the inputs
         for s in inputs:
             act = s[:1]
             units = s[1:]
@@ -51,7 +52,7 @@ def main():
                 C.robot_turn_left()
                 u -= 1
 
-    # output the minimum distance to initial
+    # output the minimum distance to initial point
     stopPos = C.robot_where()
     d = C.get_distance(startPos, stopPos)
     # print(stopPos)
